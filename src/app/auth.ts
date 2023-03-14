@@ -58,9 +58,7 @@ export function getAllUser() {
     axiosInstance
       .get<never, AxiosResponse<Get_All_UserI>>("users")
       .then((res) => {
-        console.log(res, "res");
         dispatch(getAllUserToStore(res.data.users));
-        console.log(res.data.users, "res user");
       });
   };
 }

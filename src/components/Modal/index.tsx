@@ -23,7 +23,6 @@ const Modal: React.FC<Props> = ({
   buttonText = "",
   hideButtons = false,
 }) => {
-  console.log("Modal RENDER");
   return (
     <div className={styles.modal_bg}>
       <div className={styles.modal}>

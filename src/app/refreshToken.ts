@@ -11,8 +11,6 @@ const refreshTokenFn = async () => {
     const response: any = await axiosPublic.get("/refresh");
     console.log(response, "resp to send refresh token");
 
-    // const { session } = response.data;
-    // console.log(session, "session");
     if (!response?.tokens.accessToken) {
       console.log("not get accessToken");
       // Log Out
