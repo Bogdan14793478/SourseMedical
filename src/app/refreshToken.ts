@@ -7,10 +7,7 @@ import mem from "mem";
 import { axiosPublic } from "./axiosPublic";
 
 const refreshTokenFn = async () => {
-  // const refreshToken: string | null = getFromStorage("refreshToken");
-  // console.log(refreshToken, "refreshToken create req");
   try {
-    console.log("section try work");
     const response: any = await axiosPublic.get("/refresh");
     console.log(response, "resp to send refresh token");
 
@@ -24,7 +21,7 @@ const refreshTokenFn = async () => {
     }
     console.log(response, "session.tokens");
 
-    // setToStorage(response.data.tokens.accessToken, "accessToken");
+    setToStorage(response.data.tokens.accessToken, "accessToken");
     // setToStorage(response.data.tokens.refreshToken, "refreshToken");
 
     return response.data.tokens;

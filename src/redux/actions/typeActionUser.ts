@@ -1,3 +1,4 @@
+import { UserParam } from "../../app/auth";
 import { User } from "./interface";
 
 export enum ActionTypesUser {
@@ -5,6 +6,7 @@ export enum ActionTypesUser {
   GET_ALL_ADMIN = "GET_ALL_ADMIN",
   GET_ALL_USER = "GET_ALL_USER",
   DELETE_CHOOSE_USER = "DELETE_CHOOSE_USER",
+  SET_USER_OPTIONS = "SET_USER_OPTIONS",
 }
 export type Action2<T, P> = { type: T; payload: P };
 
@@ -28,5 +30,14 @@ export const actionDeleteChooseUser = (
   payload: string
 ): DeleteChooseUserType => ({
   type: ActionTypesUser.DELETE_CHOOSE_USER,
+  payload,
+});
+
+export type SetUserOptionsType = Action2<
+  ActionTypesUser.SET_USER_OPTIONS,
+  UserParam
+>;
+export const setUserOptions = (payload: UserParam): SetUserOptionsType => ({
+  type: ActionTypesUser.SET_USER_OPTIONS,
   payload,
 });

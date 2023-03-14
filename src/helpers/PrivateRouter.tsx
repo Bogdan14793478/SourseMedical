@@ -6,7 +6,7 @@ import { getFromStorage } from "./helpers";
 
 export const PrivateRoutes = ({ component: RouteComponent }: any) => {
   const isAuth = useSelector((state: RootState) => state.user.isAuth);
-  const Authentication = isAuth && !!getFromStorage("refreshToken");
+  const Authentication = isAuth && !!getFromStorage("accessToken");
 
   return Authentication ? <RouteComponent /> : <Navigate to="/login" />;
 };

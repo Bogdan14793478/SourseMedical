@@ -25,9 +25,9 @@ import { deleteChooseUser } from "../../app/users";
 import { BanModal } from "../../components/BanModal/BanModal";
 
 export const UserManagement = () => {
-  const [loading, setLoading] = useState(false);
-  const [openModalBan, setOpenModalBan] = useState(false);
-  const [openModalDelete, setOpenModalDelete] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [openModalBan, setOpenModalBan] = useState<boolean>(false);
+  const [openModalDelete, setOpenModalDelete] = useState<boolean>(false);
 
   // Use chooseUser to save id when ban or delete
   const [chooseUser, setChooseUser] = useState<string | null>("");
@@ -41,19 +41,19 @@ export const UserManagement = () => {
 
   const navigate = useNavigate();
 
-  const handleClickViewPost = useCallback((name: string) => {
+  const handleClickViewPost = useCallback((name: string): void => {
     navigate(`/user-management/${name}`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // open modal ban
-  const handleClickBanUser = useCallback((id: string) => {
+  const handleClickBanUser = useCallback((id: string): void => {
     setOpenModalBan(true);
     setChooseUser(id);
   }, []);
 
   // ban user
-  const handleClickBan = () => {
+  const handleClickBan = (): void => {
     setLoading(true);
     const arrChecked: number[] = [isChecked];
     if (!!inputBan.current) {
@@ -70,12 +70,12 @@ export const UserManagement = () => {
   };
 
   // open modal delete user
-  const handleClickDeleteUser = useCallback((id: string) => {
+  const handleClickDeleteUser = useCallback((id: string): void => {
     setOpenModalDelete(true);
     setChooseUser(id);
   }, []);
 
-  const handleDeleteUser = () => {
+  const handleDeleteUser = (): void => {
     setLoading(true);
     deleteChooseUser(chooseUser);
     setChooseUser(null);
@@ -83,29 +83,20 @@ export const UserManagement = () => {
     setLoading(false);
   };
 
-  const closeBanModal = () => {
+  const closeBanModal = (): void => {
     setOpenModalBan(false);
     setIsChecked(0);
     setChooseUser(null);
   };
 
   useEffect(() => {
-    // dispatch(getAllAdmin());
     dispatch(getAllUser());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    console.log("Page user-management load");
-  }, []);
-
-  // const handleClick = () => {
-  //   console.log("Click");
-  //   getAllUser();
-  // };
+  }, [dispatch]);
 
   return (
     <div className={classes.container}>
       <div className={classes.info_field}>
-        {/* {(loading || !users.length) && <Loader />} */}
-        {/* <button onClick={handleClick}>+</button> */}
+        {(loading || !users.length) && <Loader />}
         <NavPanel
           text={Labels.UserManagement}
           buttonReport={true}
@@ -115,7 +106,6 @@ export const UserManagement = () => {
         />
         <div className={classes.table}>
           <Table
-            // items={userManagement} - moc data
             items={users}
             loading={loading}
             headers={USER_MANAGEMENT_TABLE}
@@ -135,7 +125,6 @@ export const UserManagement = () => {
                       className={clsx(classes.table_row, classes.table_name)}
                     >
                       {item?.username}
-                      {/* {item.?full_name} - moc */}
                     </div>
                   </td>
                   <td>

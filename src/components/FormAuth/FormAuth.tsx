@@ -1,16 +1,12 @@
-import React, { useState } from "react";
 import { Form, Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
-import { AuthFormData } from "./types";
+import { AuthFormData, FormAuthProps } from "./types";
 
 import classes from "./styles.module.css";
 import { ErrorMsg, Labels } from "../../helpers/constants";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { userIsAuth } from "../../redux/actions/typeActionUser";
-import { useAppSelector } from "../../hooks";
-// import { useCookies } from "react-cookie";
-// import Cookies from "universal-cookie";
+import { setUserOptions, userIsAuth } from "../../redux/actions/typeActionUser";
 
 import clsx from "clsx";
 import { errorNotify, successNotify } from "../../helpers/helpers";
@@ -30,40 +26,20 @@ const validationSchema = Yup.object().shape({
     .required(ErrorMsg.resultRequired),
 });
 
-export const FormAuth = ({ param }: any) => {
-  const [cookies, setCookies] = useState("");
-  // const cookies = new Cookies();
-
+export const FormAuth: React.FC<FormAuthProps> = ({ param }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  function authorizeStatus() {
+  function authorizeStatus(): void {
     dispatch(userIsAuth(true));
   }
-  // if (cookies.length) {
-  //   console.log("IF WORK");
-  //   document.cookie = `refreshToken=${cookies}; SameSite=None; Secure`;
-  // }
-  const set = (name: string, value = ""): void => {
-    document.cookie = `${name}=${value}`;
-  };
 
-  const handleClickLogin = async (data: AuthFormData) => {
+  const handleClickLogin = async (data: AuthFormData): Promise<void> => {
     const isAdmin = await param(data);
-    console.log(isAdmin, "isAdmin");
     if (!!isAdmin && location.pathname === "/login") {
-      // document.cookie = `refreshToken=${isAdmin}`;
-      set("token", isAdmin);
-      console.log("work");
-      // setCookies(isAdmin);
+      dispatch(setUserOptions(isAdmin));
       authorizeStatus();
-      debugger;
-      // const res = cookies.set("refreshToken", JSON.stringify(isAdmin));
-      // console.log(res, "res");
-      // cookies.set("refreshToken", isAdmin);
-      // console.log(cookies.get("refreshToken"));
-      // document.cookie = `refreshToken=${isAdmin}; SameSite=None; Secure`;
       navigate("/user-management");
       return;
     }
