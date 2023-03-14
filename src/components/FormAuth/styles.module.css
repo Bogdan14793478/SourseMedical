@@ -1,0 +1,53 @@
+.form_field {
+  margin-top: 30px;
+  width: 312px;
+}
+
+.textAuth {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #aaabad;
+  font-family: "proxima-nova", sans-serif;
+  font-style: normal;
+}
+
+.inputAuth {
+  margin-top: 13px;
+  width: 312px;
+  padding: 15px 24px;
+  background: #f8f8f8;
+  border-radius: 16px;
+  border: 1px solid #62b273;
+}
+
+.inputSuccess {
+  border: 1px solid #62b273;
+}
+
+.inputError {
+  border: 1px solid #f05122;
+}
+
+.btnLogIn {
+  margin-top: 56px;
+  width: 312px;
+  height: 48px;
+  background: #1491ea;
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.error {
+  margin-top: 8px;
+  font-family: "proxima-nova", sans-serif;
+  color: #f05122;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+}

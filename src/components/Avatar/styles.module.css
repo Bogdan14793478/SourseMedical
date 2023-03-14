@@ -1,0 +1,19 @@
+.avatar {
+  object-fit: cover;
+  border-radius: 999px;
+}
+
+.avatar_size_small {
+  height: 32px;
+  width: 32px;
+}
+
+.avatar_size_medium {
+  height: 40px;
+  width: 40px;
+}
+
+.avatar_size_large {
+  height: 100px;
+  width: 100px;
+}

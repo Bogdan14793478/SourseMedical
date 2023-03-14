@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  width: 240px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  height: 48px;
+  padding: 14px 12px;
+  border: none;
+  align-items: center;
+  position: relative;
+}
+
+.input_filtered {
+  background: transparent;
+  border: none;
+  color: #1d1d1d;
+  font-size: 14px;
+  width: 100%;
+  padding-right: 10px;
+}
+
+.input_filtered:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.icon_search {
+  height: 40px;
+  width: 40px;
+}
+
+.result_search {
+  position: absolute;
+  padding: 8px;
+  background: #f8f8f8;
+  max-height: 156px;
+  width: 240px;
+  overflow-y: auto;
+}
+
+.render_find_name {
+  margin-top: 8px;
+  color: #808191;
+  font-family: "proxima-nova", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}

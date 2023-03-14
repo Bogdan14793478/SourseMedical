@@ -1,0 +1,65 @@
+.container_resource_manager {
+  background: #f2f7fc;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 36px;
+}
+
+.info_field_resource_manager {
+  margin: 60px 0;
+  width: 1088px;
+  height: auto;
+  border-radius: 24px;
+  background: #ffffff;
+}
+
+.table {
+  margin: 0 58px;
+}
+
+.table_name {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin-right: 8px;
+  color: #1f2340;
+  cursor: pointer;
+}
+
+.posts_col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.space {
+  content: "";
+  width: 20px;
+}
+
+.table_email {
+  color: #2e2c34;
+  margin-right: 30px;
+}
+
+.file_container {
+  display: flex;
+  height: 54px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.imageFile {
+  position: relative;
+  margin-top: 19px;
+}
+
+.name_container {
+  margin-left: 28px;
+
+  display: flex;
+  align-items: center;
+}

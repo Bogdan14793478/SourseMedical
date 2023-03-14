@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+body {
+  font-family: "proxima-nova", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.right-space-small {
+  margin-right: 12px;
+}
+.right-space {
+  margin-right: 20px;
+}
+
+.top-space {
+  margin-top: 30px;
+}
+
+.left-space {
+  margin-left: 40px;
+}

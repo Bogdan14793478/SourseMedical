@@ -1,0 +1,51 @@
+.container_post {
+  width: 327px;
+  background: #f8f8f8;
+  border-radius: 16px;
+  height: fit-content;
+  max-height: 415px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin: 0 5px 40px 5px;
+}
+
+.space {
+  height: 8px;
+}
+
+.main_text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #1f2340;
+}
+
+.more_description {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #1491ea;
+  margin: 16px 0;
+}
+
+.footer_post {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 8px;
+}
+
+.count_footer {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #1f2340;
+  margin: 0 6px;
+}
+
+.chat_footer {
+  margin-left: 25px;
+  display: flex;
+  align-items: center;
+}
